@@ -46,13 +46,17 @@
       justify-content: center;
       font-size: 16px;
     }
-    .cartao {
+    .card {
       background: var(--cor-cartao);
       width: 100%;
       max-width: 380px;
       padding: 28px;
       border-radius: 12px;
       box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    }
+
+    .item {
+      list-style: none;
     }
     h1 { font-size: 22px; margin: 0 0 4px; }
     .subtitulo { margin: 0 0 20px; color: #57606a; font-size: 14px; }
@@ -97,54 +101,33 @@
 </head>
 
 <body>
-  <!-- ================= AREA DE CONTEUDO (B) ================= -->
-  <!-- Troque os textos entre as marcas MUDE AQUI pelo conteudo da SUA tela. -->
-  <main class="cartao">
+  <section class="main">
+    <h1>TO-DO List</h1>
 
-    <h1><!-- MUDE AQUI -->Criar conta</h1>
-    <p class="subtitulo"><!-- MUDE AQUI -->Preencha os dados para se cadastrar</p>
+    <input type="text" placeholder="Insira sua tarefa aqui">
 
-    <form id="formulario">
+    <div class="card">
+      <ul class="list">
+        <li class="item">
+          Ler 10 páginas do livro
+        </li >
+        <li class="item">
+          Meditar
+        </li class="item">
+        <li>
+          Editar 2 Videos
+        </li class="item">
+        <li>
+          Criar Portfolio
+        </li class="item">
+        <li> 
+          Academia
+        </li>
 
-      <!-- Cada campo tem: um rotulo, um campo e uma dica. Copie o bloco para criar mais campos. -->
-      <label for="nome"><!-- MUDE AQUI -->Nome completo</label>
-      <input type="text" id="nome" placeholder="Ex: Maria Silva" required>
+        <div class="footer-cartao"><b>Itens Restantes</b> <a>Todos</a> <a>Limpeza Completa</a> </div>
+      </ul>
+    </div>
 
-      <label for="email"><!-- MUDE AQUI -->E-mail</label>
-      <input type="email" id="email" placeholder="voce@exemplo.com" required>
-      <p class="dica"><!-- MUDE AQUI -->Usaremos apenas para enviar a confirmacao.</p>
-
-      <label for="senha"><!-- MUDE AQUI -->Senha</label>
-      <input type="password" id="senha" placeholder="Minimo de 6 caracteres" minlength="6" required>
-
-      <div class="botoes">
-        <!-- PRINCIPIO (Aula 4): controle do usuario - acao principal e opcao de desfazer -->
-        <button type="submit" class="principal"><!-- MUDE AQUI -->Cadastrar</button>
-        <button type="reset" class="secundario"><!-- MUDE AQUI -->Limpar</button>
-      </div>
-
-      <!-- PRINCIPIO (Aula 4): projeto para erros - espaco reservado para feedback -->
-      <p id="mensagem" class="mensagem"></p>
-    </form>
-  </main>
-
-  <!-- ================= FEEDBACK SIMPLES (nao precisa mexer) =================
-       Este trecho apenas mostra uma mensagem de sucesso ou erro ao enviar,
-       para demonstrar o PRINCIPIO de "projeto para erros" e feedback ao usuario.
-       Duplas do caminho VISUAL podem ignorar; duplas do caminho CODIGO podem
-       melhorar as validacoes. -->
-  <script>
-    const form = document.getElementById('formulario');
-    const msg = document.getElementById('mensagem');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      msg.className = 'mensagem sucesso';
-      msg.textContent = 'Cadastro enviado com sucesso. (mensagem de exemplo)';
-    });
-    form.addEventListener('reset', function () {
-      msg.className = 'mensagem';
-      msg.textContent = '';
-    });
-  </script>
+  </section>
 </body>
 </html>
